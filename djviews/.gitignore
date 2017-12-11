@@ -1,0 +1,12 @@
+#
+*.pyc
+.idea
+.json
+
+#
+/Include
+/Lib
+/Scripts
+/tcl
+
+
