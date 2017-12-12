@@ -1,7 +1,9 @@
 #
 *.pyc
 .idea
+.idea/*
 .json
+
 
 #
 /Include
