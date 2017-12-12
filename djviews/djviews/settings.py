@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'djviews.urls'
+ROOT_URLCONF = 'djcore.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
 
 LOGIN_URL = '/login/'
 
-WSGI_APPLICATION = 'djviews.wsgi.application'
+WSGI_APPLICATION = 'djcore.wsgi.application'
 
 
 # Database
