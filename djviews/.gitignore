@@ -1,8 +1,8 @@
 #
 *.pyc
 .idea
-.idea/*
-.json
+*.idea
+*.json
 
 
 #
