@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5291bf34-fe94-47e7-b6f6-34d47f6574ae" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djviews/src/db.sqlite3" afterPath="$PROJECT_DIR$/djviews/src/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djviews/src/blog/templates/blog/create-view.html" afterPath="$PROJECT_DIR$/djviews/src/blog/templates/blog/create-view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djviews/src/blog/templates/blog/detail/detail.html" afterPath="$PROJECT_DIR$/djviews/src/blog/templates/blog/detail/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djviews/src/blog/templates/blog/list-view.html" afterPath="$PROJECT_DIR$/djviews/src/blog/templates/blog/list-view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djviews/src/blog/urls.py" afterPath="$PROJECT_DIR$/djviews/src/blog/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djviews/src/blog/views.py" afterPath="$PROJECT_DIR$/djviews/src/blog/views.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/djcore.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djviews/.gitignore" afterPath="$PROJECT_DIR$/djviews/.gitignore" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,20 +32,50 @@
         <entry file="file://$PROJECT_DIR$/djviews/src/blog/templates/blog/list-view.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/djviews/src/blog/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="125" selection-end-column="13" />
+            <state relative-caret-position="273">
+              <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/djviews/src/manage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/djviews/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore_global" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore_global">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="5" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/djviews/src/blog/templates/blog/update-view.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="47" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="47" />
+              <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -76,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/djviews/src/blog/templates/blog/detail/detail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+              <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -89,18 +119,6 @@
               <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="10" selection-end-column="9" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/djviews/src/blog/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#46#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,6 +149,8 @@
         <option value="$PROJECT_DIR$/djviews/src/blog/urls.py" />
         <option value="$PROJECT_DIR$/djviews/src/blog/templates/blog/list-view.html" />
         <option value="$PROJECT_DIR$/djviews/src/blog/views.py" />
+        <option value="$PROJECT_DIR$/djviews/.gitignore" />
+        <option value="$PROJECT_DIR$/.gitignore_global" />
       </list>
     </option>
   </component>
@@ -167,53 +187,6 @@
             <path>
               <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
               <item name="djcore" type="462c0819:PsiDirectoryNode" />
-              <item name="djviews" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djcore" type="462c0819:PsiDirectoryNode" />
-              <item name="djviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djcore" type="462c0819:PsiDirectoryNode" />
-              <item name="djviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djcore" type="462c0819:PsiDirectoryNode" />
-              <item name="djviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djcore" type="462c0819:PsiDirectoryNode" />
-              <item name="djviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djcore" type="462c0819:PsiDirectoryNode" />
-              <item name="djviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="detail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djcore" type="462c0819:PsiDirectoryNode" />
-              <item name="djviews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="djviews" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -380,7 +353,7 @@
     <entry file="file://$PROJECT_DIR$/djviews/src/blog/templates/blog/update-view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="47" lean-forward="true" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="47" />
+          <caret line="2" column="47" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -388,7 +361,7 @@
     <entry file="file://$PROJECT_DIR$/djviews/src/blog/templates/blog/detail/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -404,18 +377,42 @@
     <entry file="file://$PROJECT_DIR$/djviews/src/blog/templates/blog/list-view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/djviews/src/blog/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="125" selection-end-column="13" />
+        <state relative-caret-position="273">
+          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/djviews/src/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/djviews/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore_global">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="5" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
