@@ -7,6 +7,10 @@
 <body>
 <h1>Hello World!</h1>
 
+<form method="GET" action="/blog/">
+    <input type="text" placeholder="Search" name="title">
+</form>
+
 {% for post in posts %}
 <li>
     <a href='/blog/detail/{{ post.id }}'>{{ post.title }}</a>

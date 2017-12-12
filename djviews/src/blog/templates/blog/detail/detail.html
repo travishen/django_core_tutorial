@@ -5,3 +5,7 @@
 <p>
     {{post.content}}
 </p>
+
+<form method="POST" action="."> {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
