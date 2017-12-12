@@ -1,7 +1,5 @@
 #
 *.pyc
-.idea
-*.idea
 *.json
 
 
@@ -10,5 +8,6 @@
 /Lib
 /Scripts
 /tcl
+/.idea
 
 
