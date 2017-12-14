@@ -1,18 +1,28 @@
 from django.db import models
 from django.db.models import (CharField, TextField,
                               IntegerField, DateField,
-                              SlugField, DateTimeField)
+                              SlugField, DateTimeField,
+                              BooleanField)
 from django.utils.encoding import smart_text
 from .validators import validate_author_email
 from django.utils.text import slugify
 
 from django.db.models.signals import post_save, pre_save
 
+from django.utils.timesince import timesince
+from datetime import datetime, timedelta
+
 PUBLISH_CHOICES = (
     ('draft', 'Draft'),
     ('publish', 'Publish'),
     ('private', 'Private'),
 )
+
+
+class PostModelManager(models.Manager):
+    def all(self, *args, **kwargs):
+        qs = super(PostModelManager, self).all(*args, **kwargs).filter(active=True)
+        return qs
 
 
 class PostModel(models.Model):
@@ -24,6 +34,7 @@ class PostModel(models.Model):
                           'blank': 'this title is blank, please try again!'
                       },
                       help_text='must be an unique title')
+    active = BooleanField(default=False)
     content = TextField(null=True, blank=True)
     publish = CharField(max_length=120, default='draft', choices=PUBLISH_CHOICES)
     view_count = IntegerField(default=0)
@@ -36,14 +47,32 @@ class PostModel(models.Model):
     updated = models.DateTimeField(auto_now=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
+    other = PostModelManager()
+
     class Meta:
-        verbose_name = 'Post'
         verbose_name_plural = 'Posts'
 
     def save(self, *args, **kwargs):
         # if not self.slug:
         #     self.slug = slugify(self.title)
         super(PostModel, self).save(*args, **kwargs)
+
+    @property
+    def age(self):
+        if self.publish != 'publish':
+            return 'Not published!'
+
+        now = datetime.now()
+        publish_time = datetime.combine(self.publish_date, now.min.time())
+
+        try:
+            diff = now - publish_time
+        except:
+            return 'Not published'
+
+        if diff <= timedelta(minutes=1):
+            return 'just now'
+        return timesince(self.publish_date)
 
     def __unicode__(self):
         return smart_text(self.title)

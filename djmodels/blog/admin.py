@@ -11,17 +11,18 @@ class PostModelAdmin(admin.ModelAdmin):
         'publish_date',
         'updated',
         'timestamp',
-        'new_content'
+        'get_age',
+        'publish'
     ]
     readonly_fields = [
         'updated',
         'timestamp',
-        'new_content'
+        'get_age'
     ]
 
     @staticmethod
-    def new_content(obj,  *args, **kwargs):
-        return str(obj.title) + str(obj.publish_date)
+    def get_age(obj):
+        return obj.age
 
     class Meta:
         model = PostModel
