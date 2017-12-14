@@ -19,10 +19,20 @@ PUBLISH_CHOICES = (
 )
 
 
+class PostModelQuerySet(models.query.QuerySet):
+    def active(self):
+        return self.filter(active=True)
+
+
 class PostModelManager(models.Manager):
-    def all(self, *args, **kwargs):
-        qs = super(PostModelManager, self).all(*args, **kwargs).filter(active=True)
+
+    def all(self):
+        #  qs = super(PostModelManager, self).all(*args, **kwargs)
+        qs = self.get_queryset()
         return qs
+
+    def get_queryset(self):
+        return PostModelQuerySet(self.model, using=self._db)
 
 
 class PostModel(models.Model):
@@ -47,7 +57,7 @@ class PostModel(models.Model):
     updated = models.DateTimeField(auto_now=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
-    other = PostModelManager()
+    objects = PostModelManager()
 
     class Meta:
         verbose_name_plural = 'Posts'
