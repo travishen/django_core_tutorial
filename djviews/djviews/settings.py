@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'cbv',
+    'dashboard'
 ]
 
 MIDDLEWARE = [
@@ -50,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'djcore.urls'
+ROOT_URLCONF = 'djviews.urls'
 
 TEMPLATES = [
     {
@@ -68,9 +70,7 @@ TEMPLATES = [
     },
 ]
 
-LOGIN_URL = '/login/'
-
-WSGI_APPLICATION = 'djcore.wsgi.application'
+WSGI_APPLICATION = 'djviews.wsgi.application'
 
 
 # Database
