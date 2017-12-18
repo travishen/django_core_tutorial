@@ -7,6 +7,17 @@ from django.views.generic.base import TemplateView, TemplateResponseMixin, Conte
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
+from .models import Book
+
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
+
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
+from .forms import BookForm
+
+from django.core.urlresolvers import reverse
+
 
 class LoginRequiredMixin(object):
     @classmethod
@@ -53,4 +64,60 @@ class AnotherTempView(ContextMixin, TemplateResponseMixin, LoginRequiredMixin, V
 
     def post(self):
         pass
+
+
+# def book_detail(request, slug):
+#     book = Book.objects.get(slug=slug)
+#     template = ''
+#     context = {
+#         'book': book
+#     }
+#     return render(request, template, context)
+
+class BookDetail(DetailView):
+    template_name = 'cbv/template.html'
+    model = Book
+
+    # def get_context_data(self, **kwargs):
+    #     context = super(BookDetail, self).get_context_data(**kwargs)
+    #     return context
+    #slug
+    #id
+
+
+class BookList(ListView):
+    template_name = 'cbv/template.html'
+    model = Book
+
+    def get_queryset(self, *args, **kwargs):
+        qs = super(BookList, self).get_queryset(*args, **kwargs).order_by('id')
+        return qs
+
+
+class BookCreate(CreateView):
+    template_name = 'cbv/form.html'
+    model = Book
+    form_class = BookForm
+    # fields = [
+    #     'title',
+    #     'description'
+    # ]
+
+    def form_valid(self, form):
+        print(form.instance)
+        form.instance.added_by = self.request.user
+        return super(BookCreate, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('cbv:book_list')
+
+
+class BookUpdate(UpdateView):
+    template_name = 'cbv/form.html'
+    model = Book
+    form_class = BookForm
+
+    def get_object(self, queryset=None):
+        pass
+
 
