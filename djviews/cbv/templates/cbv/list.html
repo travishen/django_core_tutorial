@@ -1,0 +1,8 @@
+<h1>Books</h1>
+<ul>
+{% for book in object_list %}
+    <li><a href="/cbv/book/{{ book.slug }}">{{ book.title }}</a></li>
+{% empty %}
+    <li>No books yet.</li>
+{% endfor %}
+</ul>

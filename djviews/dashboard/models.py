@@ -12,7 +12,7 @@ class Book(models.Model):
     last_edited_by = ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, related_name='book_edit')
     title = CharField(max_length=120)
     description = TextField(null=True, blank=True)
-    slug = SlugField()
+    slug = SlugField(unique=True)
     updated = DateTimeField(auto_now_add=False, auto_now=True)
     timestamp = DateTimeField(auto_now_add=True, auto_now=False)
 

@@ -12,11 +12,15 @@ from .models import Book
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, ModelFormMixin
 
 from .forms import BookForm
 
 from django.core.urlresolvers import reverse
+
+from django.http import Http404
+
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 class LoginRequiredMixin(object):
@@ -74,19 +78,28 @@ class AnotherTempView(ContextMixin, TemplateResponseMixin, LoginRequiredMixin, V
 #     }
 #     return render(request, template, context)
 
-class BookDetail(DetailView):
-    template_name = 'cbv/template.html'
+class BookDetail(ModelFormMixin, DetailView):
+    template_name = 'cbv/detail.html'
     model = Book
+    form_class = BookForm
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(BookDetail, self).get_context_data(**kwargs)
-    #     return context
-    #slug
-    #id
+    def get_context_data(self, *args, **kwargs):
+        context = super(BookDetail, self).get_context_data(*args, **kwargs)
+        context['form'] = self.get_form()
+        context['btn_title'] = 'Update Book'
+        return context
+
+    def post(self, request, *args, **kwargs):
+        # self.object = self.get_object()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
 
 
 class BookList(ListView):
-    template_name = 'cbv/template.html'
+    template_name = 'cbv/list.html'
     model = Book
 
     def get_queryset(self, *args, **kwargs):
@@ -94,7 +107,7 @@ class BookList(ListView):
         return qs
 
 
-class BookCreate(CreateView):
+class BookCreate(SuccessMessageMixin, CreateView):
     template_name = 'cbv/form.html'
     model = Book
     form_class = BookForm
@@ -111,6 +124,13 @@ class BookCreate(CreateView):
     def get_success_url(self):
         return reverse('cbv:book_list')
 
+    success_message = "%(title)s was created at %(created_at)s"
+
+    def get_success_message(self, cleaned_data):
+        return self.success_message % dict(
+            cleaned_data,
+            created_at=self.object.timestamp
+        )
 
 class BookUpdate(UpdateView):
     template_name = 'cbv/form.html'
@@ -120,4 +140,26 @@ class BookUpdate(UpdateView):
     def get_object(self, queryset=None):
         pass
 
+
+class BookDelete(DeleteView):
+    template_name = 'cbv/delete.html'
+    model = Book
+    form_class = BookForm
+
+    def get_success_url(self):
+        return reverse('cbv:book_list')
+
+
+class MultipleObjectMixin(object):
+    def get_object(self, queryset=None, *args, **kwargs):
+        slug = self.kwargs.get('slug')
+        if slug:
+            try:
+                obj = self.model.objects.get(slug=slug)
+            except self.model.MultipleObjectReturned:
+                obj = self.get_queryset().first()
+            except:
+                raise Http404
+            return obj
+        return None
 
