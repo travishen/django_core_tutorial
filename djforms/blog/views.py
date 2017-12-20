@@ -46,14 +46,15 @@ def post(request):
     form = PostModelForm(data=data)
 
     if form.is_valid():
-        form.save()
+        if form.cleaned_data:
+            form.save()
 
     return render(request, 'blog/test.html', {'form': form})
 
 
 def formset(request):
 
-    test_formset = modelformset_factory(PostModel, exclude=[])
+    test_formset = modelformset_factory(PostModel, fields=['title', 'active'])
 
     data = request.POST or None
 
@@ -62,11 +63,11 @@ def formset(request):
     else:
         queryset = None
 
-    forms = test_formset(data=data, queryset=queryset)
+    forms = test_formset(data=data, queryset=None)
 
     if forms.is_valid():
-        forms.save()
-        return HttpResponseRedirect('/blog/formset')
+        for form in forms:
+            form.save()
 
     context = {
         'forms': forms

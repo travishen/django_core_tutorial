@@ -62,6 +62,15 @@ class PostModelForm(forms.ModelForm):
             }
         }
 
+    def clean(self):
+        print('validate title..')
+        cleaned_data = super(PostModelForm, self).clean()
+        title = cleaned_data.get('title')
+        if 'test' not in title:
+            raise forms.ValidationError("You have forgotten about test in title!")
+
+        return cleaned_data
+
     def save(self, commit=True, *args, **kwargs):
         obj = super(PostModelForm, self).save(commit=False, *args, **kwargs)
         if commit:
@@ -79,5 +88,5 @@ class PostModelForm(forms.ModelForm):
                 'max_length': '%s is too long' % field.label
             }
 
-    def get_success_url(self):
-        return reverse('cbv:book_list')()
+
+
