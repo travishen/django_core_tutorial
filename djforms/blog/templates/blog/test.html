@@ -1,4 +1,22 @@
 <form method="POST" action="."> {% csrf_token %}
-    {{ form.as_p }}
+    {{ form.non_field_errors }}
+    <div>
+        {{ form.title.errors }}
+        <label for="{{ form.title.id_for_label }}">Title:</label>
+        {{ form.title }}
+    </div>
+    <div>
+        {{ form.active.errors }}
+        <label for="{{ form.active.id_for_label }}">Active:</label>
+        {{ form.active }}
+    </div>
+    <div>
+        {{ form.slug }}
+        <label for="{{ form.slug.id_for_label }}">Slug:</label>
+        {{ form.slug }}
+    </div>
+
+    {% include '/blog/snippet.html' with form=form as_p=True %}
+
     <input type="submit" placeholder="Submit">
 </form>

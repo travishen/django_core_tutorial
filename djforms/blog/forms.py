@@ -46,9 +46,38 @@ class PostModelForm(forms.ModelForm):
         'fields' attribute or the 'exclude' 
         attribute is prohibited
         """
-        exclude = []
+        fields = ['active', 'title', 'slug', 'content']
+        # exclude = []
+        labels = {
+            'active': 'Active!',
+            'slug': 'Slug!'
+        }
+        help_text = {
+            'active': 'This is title label',
+            'slug': 'This is slug label'
+        }
+        error_messages = {
+            'title': {
+                'max_length': 'This title is too long'
+            }
+        }
 
     def save(self, commit=True, *args, **kwargs):
         obj = super(PostModelForm, self).save(commit=False, *args, **kwargs)
         if commit:
             obj.save()
+
+    def __init__(self, *args, **kwargs):
+        super(PostModelForm, self).__init__(*args, **kwargs)
+
+        self.fields['title'].error_messages = {
+            'max_length': 'This title is too long'
+        }
+
+        for field in self.fields.values():
+            field.error_messages = {
+                'max_length': '%s is too long' % field.label
+            }
+
+    def get_success_url(self):
+        return reverse('cbv:book_list')()

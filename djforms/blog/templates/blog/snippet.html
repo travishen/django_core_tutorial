@@ -1,0 +1,7 @@
+<form method="POST" action="."> {% csrf_token %}
+    {% if as_p %}
+        {{ form.as_p }}
+    {% else %}
+        {{ form.as_ul }}
+    {% endif %}
+</form>

@@ -2,6 +2,12 @@ from django.shortcuts import render
 
 from .forms import SearchForm, TestForm, PostModelForm
 
+from .models import PostModel
+
+from django.http import HttpResponseRedirect
+
+from django.forms import formset_factory, modelformset_factory
+
 
 def search(request):
     form = SearchForm()
@@ -43,3 +49,29 @@ def post(request):
         form.save()
 
     return render(request, 'blog/test.html', {'form': form})
+
+
+def formset(request):
+
+    test_formset = modelformset_factory(PostModel, exclude=[])
+
+    data = request.POST or None
+
+    if request.user.is_authenticated():
+        queryset = PostModel.objects.filter(author_email__icontains=request.user)
+    else:
+        queryset = None
+
+    forms = test_formset(data=data, queryset=queryset)
+
+    if forms.is_valid():
+        forms.save()
+        return HttpResponseRedirect('/blog/formset')
+
+    context = {
+        'forms': forms
+    }
+    return render(request, 'blog/formset.html', context)
+
+
+

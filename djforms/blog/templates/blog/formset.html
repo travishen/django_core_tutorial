@@ -1,0 +1,13 @@
+<h1>Formset View</h1>
+
+<form action="" method="POST"> {% csrf_token %}
+    {{ forms.management_form }}
+    {% for form in forms %}
+        <div>
+            {{ form.as_p }}
+            <hr/>
+        </div>
+    {% endfor %}
+    {{ forms.empty_form.as_p }}
+    <input type="submit" value="Submit">
+</form>
