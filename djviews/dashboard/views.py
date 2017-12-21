@@ -108,7 +108,7 @@ class BookList(ListView):
 
 
 class BookCreate(SuccessMessageMixin, CreateView):
-    template_name = 'cbv/form.html'
+    template_name = 'cbv/test.html'
     model = Book
     form_class = BookForm
     # fields = [
@@ -133,7 +133,7 @@ class BookCreate(SuccessMessageMixin, CreateView):
         )
 
 class BookUpdate(UpdateView):
-    template_name = 'cbv/form.html'
+    template_name = 'cbv/test.html'
     model = Book
     form_class = BookForm
 
