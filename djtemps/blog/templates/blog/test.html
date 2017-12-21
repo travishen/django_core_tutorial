@@ -1,0 +1,14 @@
+
+<p>{{ viewTitle }}</p>
+<p>{{ abc }}</p>
+<p>{{ addNum }}</p>
+<p>{{ today|date:'D d M Y a'}}</p>
+
+<ul>
+    {% for obj in object_list %}
+        <li style='font-weight:{% cycle "normal" "bold" %}'>
+            <p>{{ forloop.counter }}</p>
+            <p>{{ obj }}</p>
+        </li>
+    {% endfor %}
+</ul>

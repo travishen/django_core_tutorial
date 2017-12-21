@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+
+
+{% block title %}Blog List View | {{ block.super }}{% endblock title %}
+
+
+
+{% block content %}
+
+
+    <h1>Hello World</h1>
+
+    <hr/>
+
+    
+    {% for object in object_list %}
+        {% include "blog/components/object-detail.html" with object=object list_view=True %}
+    {% endfor %}
+
+
+
+{% endblock content %}

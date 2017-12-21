@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}My Project Title{% endblock title %}</title>
+
+<style>
+.bold {
+    font-weight: bold;
+}
+</style>
+
+
+</head>
+
+
+
+<body>
+
+{% include "blog/components/message.html" %}
+{% include "blog/components/search.html" %}
+
+
+{% block content %}
+{% endblock content %}
+
+</body>
+
+
+
+</html>
