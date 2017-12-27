@@ -15,13 +15,11 @@ from rest_framework.generics import (
     )
 
 
-
 from rest_framework.permissions import (
     AllowAny,
     IsAuthenticated,
     IsAdminUser,
     IsAuthenticatedOrReadOnly,
-
     )
 
 from posts.models import Post
