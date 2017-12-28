@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/djfk/cars/models.py" description="class Car(models.Model):&#10;    owner = models.Foreig..." line="19" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38d5f321-4a4f-415d-aef6-545aee5533af" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/djforms/blog/templates/blog/formset.html" afterPath="$PROJECT_DIR$/djforms/blog/templates/blog/formset.html" />
-      <change beforePath="$PROJECT_DIR$/djtests/.gitignore" afterPath="$PROJECT_DIR$/djblog/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/djtests/accounts/api/urls.py" afterPath="$PROJECT_DIR$/djtests/accounts/api/urls.py" />
-      <change beforePath="$PROJECT_DIR$/djusers/djusers/settings.py" afterPath="$PROJECT_DIR$/djusers/djusers/settings.py" />
-    </list>
+    <list default="true" id="38d5f321-4a4f-415d-aef6-545aee5533af" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -259,6 +254,31 @@
               <item name="djcore" type="462c0819:PsiDirectoryNode" />
               <item name="djblog" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djcore" type="462c0819:PsiDirectoryNode" />
+              <item name="djfk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djcore" type="462c0819:PsiDirectoryNode" />
+              <item name="djforms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djcore" type="462c0819:PsiDirectoryNode" />
+              <item name="djmodels" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djcore" type="462c0819:PsiDirectoryNode" />
+              <item name="djrest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djcore" type="462c0819:PsiDirectoryNode" />
+              <item name="djtemps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="djcore" type="b2602c69:ProjectViewProjectNode" />
