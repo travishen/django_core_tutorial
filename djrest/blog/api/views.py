@@ -55,6 +55,20 @@ class PostModelListAPIView(ListAPIView):
         return queryset_list
 
 
+class PostModelRetrieveAPIView(RetrieveAPIView):
+    queryset = PostModel.objects.all()
+    serializer_class = PostModelSerializer
+    lookup_field = 'id'
+    lookup_url_kwarg = 'primary_key'  # default = 'pk'
+
+
+class PostModelDestroyAPIView(DestroyAPIView):
+    queryset = PostModel.objects.all()
+    serializer_class = PostModelSerializer
+    lookup_field = 'id'
+    lookup_url_kwarg = 'primary_key'  # default = 'pk'
+
+
 
 
 
