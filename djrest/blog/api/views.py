@@ -28,7 +28,7 @@ from rest_framework.permissions import (
 
 )
 
-from .serializers import PostModelSerializer
+from .serializers import PostModelSerializer, PostModelListSerializer
 from blog.models import PostModel
 
 
@@ -42,7 +42,7 @@ class PostModelCreateAPIView(CreateAPIView):
 
 
 class PostModelListAPIView(ListAPIView):
-    serializer_class = PostModelSerializer
+    serializer_class = PostModelListSerializer
     filter_backends = [SearchFilter, OrderingFilter]
     permission_classes = [AllowAny]
     search_fields = ['title']
@@ -62,14 +62,14 @@ class PostModelRetrieveAPIView(RetrieveAPIView):
     queryset = PostModel.objects.all()
     serializer_class = PostModelSerializer
     lookup_field = 'id'
-    lookup_url_kwarg = 'primary_key'  # default = 'pk'
+    # lookup_url_kwarg = 'primary_key'  # default = 'pk'
 
 
 class PostModelDestroyAPIView(DestroyAPIView):
     queryset = PostModel.objects.all()
     serializer_class = PostModelSerializer
     lookup_field = 'id'
-    lookup_url_kwarg = 'primary_key'  # default = 'pk'
+    # lookup_url_kwarg = 'primary_key'  # default = 'pk'
 
 
 
