@@ -37,6 +37,9 @@ class PostModelCreateAPIView(CreateAPIView):
     queryset = PostModel.objects.all()
     permission_classes = [AllowAny]
 
+    # def perform_create(self, serializer):
+    #     serializer.save(user=self.request.user)
+
 
 class PostModelListAPIView(ListAPIView):
     serializer_class = PostModelSerializer
