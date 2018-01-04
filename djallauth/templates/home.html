@@ -1,0 +1,12 @@
+<!-- templates/home.html -->
+{% load socialaccount %}
+{% providers_media_js %}
+
+<h1>Django Allauth Tutorial</h1>
+{% if user.is_authenticated %}
+<p>Welcome {{ user.username }} !!!</p>
+{% else %}
+<a href="{% provider_login_url 'github' %}">Sign Up With Github</a>
+<a href="{% provider_login_url 'google' %}">Sign Up With Google</a>
+<a href="{% provider_login_url 'facebook' method="js_sdk" %}">Sign Up With Facebook</a>
+{% endif %}
