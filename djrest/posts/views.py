@@ -23,10 +23,11 @@ from .forms import PostForm
 from .models import Post
 
 
+
 def post_create(request):
 	if not request.user.is_staff or not request.user.is_superuser:
 		raise Http404
-
+		
 	form = PostForm(request.POST or None, request.FILES or None)
 	if form.is_valid():
 		instance = form.save(commit=False)
@@ -48,8 +49,8 @@ def post_detail(request, slug=None):
 	share_string = quote_plus(instance.content)
 
 	initial_data = {
-			"content_type": instance.get_content_type,
-			"object_id": instance.id
+		"content_type": instance.get_content_type,
+		"object_id": instance.id
 	}
 	form = CommentForm(request.POST or None, initial=initial_data)
 	if form.is_valid() and request.user.is_authenticated():

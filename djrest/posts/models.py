@@ -31,10 +31,7 @@ def upload_location(instance, filename):
     #filebase, extension = filename.split(".")
     #return "%s/%s.%s" %(instance.id, instance.id, extension)
     PostModel = instance.__class__
-    try:
-        new_id = PostModel.objects.order_by("id").last().id + 1
-    except AttributeError:
-        new_id = 1
+    new_id = PostModel.objects.order_by("id").last().id + 1
     """
     instance.__class__ gets the model Post. We must use this method because the model is defined below.
     Then create a queryset ordered by the "id"s of each object, 
@@ -74,7 +71,7 @@ class Post(models.Model):
         return reverse("posts:detail", kwargs={"slug": self.slug})
 
     def get_api_url(self):
-        return reverse("posts:api:detail", kwargs={"slug": self.slug})
+        return reverse("posts-api:detail", kwargs={"slug": self.slug})
     
     class Meta:
         ordering = ["-timestamp", "-updated"]
